@@ -5,10 +5,7 @@ import com.aubert.players.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping
@@ -37,5 +34,11 @@ public class ViewController {
             newPlayer.getAge(),
             newPlayer.getClassement()));
     return "redirect:/homePage";
+  }
+
+  @DeleteMapping("/removePlayer/{id}")
+    public String removePlayer (@PathVariable int id){
+      playerService.removePlayer(id);
+      return "redirect:/homePage";
   }
 }

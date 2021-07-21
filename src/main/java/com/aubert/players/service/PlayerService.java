@@ -10,14 +10,17 @@ import java.util.List;
 
 @Service
 public class PlayerService {
-    @Autowired
-    private PlayerRepository playerRepository;
+  @Autowired private PlayerRepository playerRepository;
 
-    public List<Player> getPlayers(){
-        return playerRepository.findAll();
-    }
+  public List<Player> getPlayers() {
+    return playerRepository.findAll();
+  }
 
-    public void addPlayer(Player newPlayer){
-        playerRepository.save(newPlayer);
-    }
+  public void addPlayer(Player newPlayer) {
+    playerRepository.save(newPlayer);
+  }
+
+  public void removePlayer(int id){
+      playerRepository.deleteById(id);
+  }
 }

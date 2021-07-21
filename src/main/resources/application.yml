@@ -1,6 +1,10 @@
 spring:
   application:
     name: player-service
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   datasource:
     url: jdbc:mysql://localhost:3306/mydb
     username: root
