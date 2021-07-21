@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau Joueur</title>
+</head>
+<body>
+<h1>Create a Customer</h1>
+
+<form th:action="@{/addPlayer}"
+      th:object="${player}" method="POST">
+    <ul>
+        <li>
+            Id:
+            <input type="text" th:field="*{id}" />
+            <br/>
+        </li>
+        <li>
+            Nom:
+            <input type="text" th:field="*{nom}" />
+            <br/>
+        </li>
+        <li>
+            Prénom:
+            <input type="text" th:field="*{prenom}" />
+            <br/>
+        </li>
+        <li>
+            Age:
+            <input type="text" th:field="*{age}" />
+            <br/>
+        </li>
+        <li>
+            Classement:
+            <input type="text" th:field="*{classement}" />
+            <br/>
+        </li>
+        <input type="submit" value="ajouter" />
+    </ul>
+</form>
+
+<br/>
+</body>
+</html>

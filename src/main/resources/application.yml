@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: player-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8200/eureka
+    registerWithEureka: true
+    fetchRegistry: true
