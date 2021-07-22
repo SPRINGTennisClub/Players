@@ -3,6 +3,7 @@ package com.aubert.players.controller;
 import com.aubert.players.entity.Player;
 import com.aubert.players.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class ViewController {
   @Autowired PlayerService playerService;
 
+  @Value("${displayed-name}")
+  private String displayedName;
+
   @GetMapping("/homePage")
   public String homePage(Model model) {
+    System.out.println("************************************" + displayedName);
     model.addAttribute("players", playerService.getPlayers());
     return "homePage";
   }
