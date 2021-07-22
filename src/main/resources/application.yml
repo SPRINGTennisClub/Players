@@ -1,11 +1,11 @@
 spring:
   application:
     name: player-service
-  cloud:
-    config:
-      uri: http://localhost:8888
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+  cloud:
+    config:
+      uri: http://localhost:8888
 displayed-name: player-local

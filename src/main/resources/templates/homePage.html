@@ -6,7 +6,7 @@
 </head>
 <body>
     <h4>Liste des inscrits</h4>
-    <a href="http://localhost:8080/showAddPlayer">Ajouter</a>
+    <a href="http://localhost:8081/showAddPlayer">Ajouter</a>
     <br/><br/>
     <div>
         <table border="1">
@@ -24,13 +24,14 @@
                 <td th:utext="${player.age}">...</td>
                 <td th:utext="${player.classement}">...</td>
                 <td>
-                    <form action="#" th:action="@{http://localhost:8080/removePlayer/} + ${{player.id}}" th:method="delete">
+                    <form action="#" th:action="@{http://localhost:8081/removePlayer/} + ${{player.id}}" th:method="delete">
                         <button type="submit">SUPPRIMER</button>
                     </form>
                 </td>
             </tr>
         </table>
     </div>
+    <a href="http://localhost:8080/clubInterface">Retour à la page d'accueil</a>
 
 </body>
 </html>

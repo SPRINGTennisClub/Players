@@ -3,15 +3,14 @@ package com.aubert.players.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @Entity(name = "joueur")
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
@@ -26,8 +25,7 @@ public class Player {
     @Column
     private String classement;
 
-    public Player(int id, String nom, String prenom, int age, String classement) {
-        this.id = id;
+    public Player(String nom, String prenom, int age, String classement) {
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;

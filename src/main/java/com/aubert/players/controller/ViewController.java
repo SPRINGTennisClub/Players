@@ -25,7 +25,7 @@ public class ViewController {
 
   @GetMapping("/showAddPlayer")
   public String initPlayer(Model model) {
-    model.addAttribute("player", new Player(0, "", "", 0, ""));
+    model.addAttribute("player", new Player("", "", 0, ""));
     return "addPlayer";
   }
 
@@ -33,7 +33,6 @@ public class ViewController {
   public String addPlayer(Model model, @ModelAttribute("player") Player newPlayer) {
     playerService.addPlayer(
         new Player(
-            newPlayer.getId(),
             newPlayer.getNom(),
             newPlayer.getPrenom(),
             newPlayer.getAge(),

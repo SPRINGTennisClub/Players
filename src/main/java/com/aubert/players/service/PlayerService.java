@@ -2,7 +2,6 @@ package com.aubert.players.service;
 
 import com.aubert.players.dao.PlayerRepository;
 import com.aubert.players.entity.Player;
-import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
